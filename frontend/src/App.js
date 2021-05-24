@@ -33,10 +33,10 @@ const App = () => {
 
   return (
     <div>
-      <Header title="Random Images" />
+      <Header title="Images Gallery" />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
       <Container className="mt-4">
-        {images.lenght ? (
+        {images.length ? (
           <Row xs={1} md={2} lg={3}>
             {images.map((image, i) => (
               <Col key={i} className="pb-3">
