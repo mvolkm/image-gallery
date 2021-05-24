@@ -13,12 +13,12 @@ const Search = ({ word, setWord, handleSubmit }) => {
                   type="text"
                   value={word}
                   onChange={(e) => setWord(e.target.value)}
-                  placeholder="Search for new image..."
+                  placeholder="Suchbegriff eingeben..."
                 />
               </Col>
               <Col>
                 <Button variant="dark" type="submit">
-                  Search
+                  Suche
                 </Button>
               </Col>
             </Form.Row>
