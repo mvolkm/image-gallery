@@ -10,9 +10,9 @@ const App = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target[0].value);
+    console.log(word);
     fetch(
-      `https://api.unsplash.com/photos/random?query=${word}&client_id=${UNSPLASH_KEY}`
+      `https://api.unsplash.com/photos/random/?query=${word}&client_id=${UNSPLASH_KEY}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -26,7 +26,7 @@ const App = () => {
 
   return (
     <div>
-      <Header title="Bilder Galerie" />
+      <Header title="Images Gallery" />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
     </div>
   );

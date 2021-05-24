@@ -2,7 +2,7 @@
     "eslint.validate": [
         "html",
         "javascript",
-        "javascriptreact"
+        "javascriptreact"       
     ],
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
