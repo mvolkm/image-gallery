@@ -9,17 +9,16 @@ const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
 
 const App = () => {
   const [word, setWord] = useState('');
-  const [images, SetImages] = useState([]);
+  const [images, setImages] = useState([]);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    console.log(word);
     fetch(
       `https://api.unsplash.com/photos/random/?query=${word}&client_id=${UNSPLASH_KEY}`
     )
       .then((res) => res.json())
       .then((data) => {
-        SetImages([{ ...data, title: word }, ...images]);
+        setImages([{ ...data, title: word }, ...images]);
       })
       .catch((err) => {
         console.log(err);
@@ -27,19 +26,21 @@ const App = () => {
     setWord('');
   };
 
+  const handleDeleteImage = (id) => {
+    setImages(images.filter((image) => image.id !== id));
+  };
+
   return (
     <div>
-      <Header title="Bilder Galerie" />
+      <Header title="Random Bilder von Unsplash.com" />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
       <Container className="mt-4">
         <Row xs={1} md={2} lg={3}>
-          {images.map((image, i) => {
-            return (
-              <Col key={i} className="pb-3">
-                <ImageCard key={i} image={image} />
-              </Col>
-            );
-          })}
+          {images.map((image, i) => (
+            <Col key={i} className="pb-3">
+              <ImageCard image={image} deleteImage={handleDeleteImage} />
+            </Col>
+          ))}
         </Row>
       </Container>
     </div>
