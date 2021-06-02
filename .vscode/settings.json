@@ -8,5 +8,12 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
-    "python.pythonPath": "C:\\Users\\micha\\.virtualenvs\\images-gallery-el9UrwGJ\\Scripts\\python.exe"
+    "python.pythonPath": "C:\\Users\\micha\\.virtualenvs\\images-gallery-el9UrwGJ\\Scripts\\python.exe",
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pycodestylesArgs":[
+        "--max-line-length=88"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "black",
+    "[python]":{"editor.formatOnSave": true}
 }
