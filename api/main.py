@@ -2,6 +2,7 @@ import os
 import requests
 from flask import Flask, request
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 #import der lokalen Variablen, die nicht ins Git sollen
 load_dotenv(dotenv_path="./.env.local")
@@ -16,6 +17,7 @@ if not UNSPLASH_KEY:
     raise EnvironmentError("Please create .env.local file and insert there UNSPLASH_KEY")
 #Definition des AppNamens
 app = Flask(__name__)
+CORS(app)
 #Status des DEBUG Modus
 app.config["DEBUG"] = DEBUG
 #Anlegen des Pfades für den Flask Server
