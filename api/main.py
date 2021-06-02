@@ -2,12 +2,13 @@ import os
 import requests
 from flask import Flask, request
 from dotenv import load_dotenv
+
 #import der lokalen Variablen, die nicht ins Git sollen
 load_dotenv(dotenv_path="./.env.local")
-#Definition der UNSPLASH API URL
+
+#Setzen von Variablen
 UNSPLASH_URL="https://api.unsplash.com/photos/random"
 UNSPLASH_KEY=os.environ.get("UNSPLASH_KEY", "")
-#Setzen des DEBUG Modus
 DEBUG=bool(os.environ.get("DEBUG", True))
 
 #Wenn kein KEY gefunden wurde, wird das Programm abgebrochen
