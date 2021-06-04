@@ -8,7 +8,7 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
-    "python.pythonPath": "C:\\Users\\micha\\.virtualenvs\\images-gallery-el9UrwGJ\\Scripts\\python.exe",
+    "python.pythonPath": "api\\.venv\\Scripts\\python.exe",
     "python.linting.pycodestyleEnabled": true,
     "python.linting.pycodestylesArgs":[
         "--max-line-length=88"
